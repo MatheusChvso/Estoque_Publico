@@ -48,25 +48,29 @@ venv\Scripts\activate
 source venv/bin/activate
 
 pip install -r requirements.txt
+```
 
-2. Configurar Banco de Dados
+### 2. Configurar Banco de Dados
 
 Crie um banco de dados MySQL chamado estoque_db. Configure as credenciais no arquivo .env ou nas variáveis de ambiente do sistema (ver backend/app.py).
 
-3. Executar o Backend (Servidor)
-
+### 3. Executar o Backend (Servidor)
+```bash
 cd backend
 python run_server.py
 # O servidor iniciará em http://localhost:5000
+```
 
-4. Executar o Frontend (Cliente)
+### 4. Executar o Frontend (Cliente)
 
 Abra um novo terminal:
 
+```bash
 cd frontend_desktop
 python run.py
+```
 
-🛠️ Funcionalidades
+### 🛠️ Funcionalidades
 
     [x] Cadastro de Produtos com Foto e Código de Barras
 
@@ -83,7 +87,7 @@ python run.py
     [x] Controle de Acesso (Admin/Usuário)
 
 
-🤝 Como Contribuir
+### 🤝 Como Contribuir
 
     Faça um Fork do projeto.
 
@@ -96,7 +100,7 @@ python run.py
     Abra um Pull Request.
 
 
-📝 Licença
+### 📝 Licença
 
 Este projeto está sob a licença MIT - veja o arquivo LICENSE para detalhes.
 
