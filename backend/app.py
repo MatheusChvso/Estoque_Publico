@@ -48,8 +48,13 @@ app.config["JWT_SECRET_KEY"] = "senha_padrao_dev"
 jwt = JWTManager(app)
 
 # Configuração Banco de Dados
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:senha123@192.168.17.200/estoque_db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+DB_USER = os.getenv('DB_USER', 'root')
+DB_PASS = os.getenv('DB_PASS', 'senha_padrao_dev') # Senha genérica
+DB_HOST = os.getenv('DB_HOST', 'localhost')        # Localhost para quem baixar
+DB_NAME = os.getenv('DB_NAME', 'estoque_db')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}'app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
