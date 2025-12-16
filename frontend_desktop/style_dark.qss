@@ -1,0 +1,241 @@
+/* =================================================================== */
+/* style_dark.qss - Versão para o Tema Escuro                          */
+/* =================================================================== */
+
+/* --- 1. ESTILOS GLOBAIS E DE JANELAS (TEMA ESCURO) --- */
+QMainWindow, QDialog, QWidget {
+    background-color: #2c2c2c; /* Cinza escuro de fundo */
+    color: #e0e0e0; /* Texto claro */
+    font-family: Segoe UI, Calibri, Tahoma;
+    font-size: 15px;
+}
+
+#mainContentArea > QWidget {
+    background-color: #2c2c2c;
+}
+
+QLabel {
+    background-color: transparent;
+    color: #e0e0e0;
+}
+
+/* --- 2. CAMPOS DE ENTRADA (Inputs, Combos, etc.) --- */
+QLineEdit, QComboBox, QDateEdit, QTextEdit {
+    background-color: #3c3c3c; /* Fundo mais escuro para inputs */
+    border: 1px solid #555555; /* Borda cinza escura */
+    padding: 8px;
+    border-radius: 5px;
+    color: #e0e0e0; /* Texto claro */
+    min-height: 20px;
+}
+
+QLineEdit:focus, QComboBox:focus, QDateEdit:focus, QTextEdit:focus {
+    border: 2px solid #0078d7; /* Mantém o azul de destaque */
+}
+
+QComboBox::drop-down {
+    border: none;
+    background-color: #555555;
+    width: 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* --- 3. SISTEMA DE BOTÕES POR CATEGORIA --- */
+QPushButton {
+    padding: 10px 20px;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #e0e0e0; /* Texto claro */
+    background-color: #3c3c3c; /* Fundo escuro */
+}
+QPushButton:hover {
+    background-color: #4a4a4a;
+}
+QPushButton:pressed {
+    background-color: #555555;
+}
+
+/* Categorias coloridas mantêm o seu gradiente, pois já contrastam bem */
+QPushButton#btnPositive, QPushButton#btnNeutral, QPushButton#btnNegative {
+    color: white;
+    border: 1px solid #00000033;
+}
+
+QPushButton#btnPositive { background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #28a745, stop: 1 #218838); }
+QPushButton#btnPositive:hover { background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2ebf4f, stop: 1 #259d41); }
+QPushButton#btnPositive:pressed { background-color: #218838; }
+
+QPushButton#btnNeutral { background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0078d7, stop: 1 #005a9e); }
+QPushButton#btnNeutral:hover { background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #008cff, stop: 1 #006acb); }
+QPushButton#btnNeutral:pressed { background-color: #005a9e; }
+
+QPushButton#btnNegative { background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #dc3545, stop: 1 #c82333); }
+QPushButton#btnNegative:hover { background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #e44d5a, stop: 1 #d32d3e); }
+QPushButton#btnNegative:pressed { background-color: #c82333; }
+
+
+/* --- 4. ESTILOS POR COMPONENTE ESPECÍFICO --- */
+
+/* --- 4.1. TELA DE LOGIN --- */
+#loginLeftPanel { background-color: #0078d7; } /* Mantém o azul para branding */
+#loginBrandingTitle { font-size: 28px; font-weight: bold; color: white; margin-top: 15px; }
+#loginBrandingSubtitle { font-size: 16px; color: #e0e0e0; }
+#loginRightPanel { background-color: #333333; } /* Fundo escuro para o painel de login */
+#loginRightPanel QLabel { color: #bbbbbb; font-weight: 600; }
+#loginFormFrame { max-width: 400px; background-color: transparent; border: none; padding: 0px; }
+#loginTitle { font-size: 24px; font-weight: 600; color: #e0e0e0; margin-bottom: 20px; }
+#loginInput { font-size: 16px; padding: 12px; background-color: #2c2c2c; border: 1px solid #555555; border-radius: 5px; color: #e0e0e0; }
+#loginInput:focus { border: 2px solid #0078d7; background-color: #3c3c3c; }
+#loginButton { font-size: 16px; font-weight: bold; color: white; padding: 12px; margin-top: 15px; background-color: #0078d7; border-radius: 5px; border: none; }
+#loginButton:hover { background-color: #005a9e; }
+#loginButton:pressed { background-color: #004578; }
+
+/* --- 4.2. PAINEL LATERAL --- */
+#painelLateral {
+    background-color: #383838; /* Cinza um pouco mais claro que o fundo */
+    border-right: 1px solid #444444;
+}
+#painelLateral QPushButton {
+    background-color: transparent;
+    border: none;
+    font-weight: normal;
+    text-align: left;
+    padding: 12px;
+    color: #e0e0e0; /* Texto claro */
+}
+#painelLateral QPushButton:hover { background-color: #4a4a4a; }
+#painelLateral QPushButton:checked {
+    background-color: #0078d7;
+    color: white;
+    font-weight: bold;
+}
+QPushButton#btnLogoff {
+    background-color: #5a6268;
+    color: white;
+    margin-top: 15px;
+}
+QPushButton#btnLogoff:hover { background-color: #6c757d; }
+QPushButton#btnLogoff:pressed { background-color: #495057; }
+
+/* --- 4.3. DASHBOARD --- */
+QFrame#welcomeCard { background-color: #3c3c3c; border-radius: 8px; padding: 20px; }
+QLabel#welcomeMessage { font-size: 28px; font-weight: 600; color: #e0e0e0; }
+QLabel#curiosityMessage { font-size: 15px; color: #aaaaaa; font-style: italic; }
+QLabel#dashboardSectionTitle { font-size: 16px; font-weight: bold; color: #e0e0e0; margin-top: 10px; border-bottom: 1px solid #555555; padding-bottom: 5px; }
+QFrame#kpiCard { background-color: #3c3c3c; border: 1px solid #555555; border-radius: 8px; min-height: 80px; }
+QFrame#kpiCard:hover { background-color: #4a4a4a; border: 1px solid #0078d7; }
+QLabel#kpiIcon { font-size: 20px; }
+QLabel#kpiTitle { color: #aaaaaa; font-size: 14px; }
+QLabel#kpiValue { font-size: 26px; font-weight: 600; color: #e0e0e0; }
+QPushButton#btnDashboardAction { background-color: #3c3c3c; border: 1px solid #555555; font-size: 18px; font-weight: normal; text-align: center; min-height: 120px; padding: 15px; color: #e0e0e0; }
+QPushButton#btnDashboardAction:hover { background-color: #4a4a4a; color: #009cff; border: 1px solid #0078d7; }
+
+/* --- 4.4. TABELAS E LISTAS --- */
+QTableWidget, QListWidget {
+    background-color: #3c3c3c;
+    border: 1px solid #555555;
+    gridline-color: #555555;
+    alternate-background-color: #424242;
+}
+QHeaderView::section {
+    background-color: #4a4a4a;
+    padding: 8px;
+    border: 1px solid #555555;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+QTableWidget::item:selected, QListWidget::item:selected {
+    background-color: #0078d7;
+    color: white;
+}
+
+/* ============================================= */
+/* ESTILOS PARA O TERMINAL DE CONSULTA (ESCuro)  */
+/* ============================================= */
+
+#terminalWidget {
+    background-color: #2c2c2c; 
+}
+
+#terminalHeaderTitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: #3498db; /* Azul mais brilhante para tema escuro */
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#terminalMainPanel {
+    background-color: #3c3c3c;
+    border: 1px solid #555555;
+    border-radius: 12px;
+    min-height: 150px;
+}
+
+#terminalProductName {
+    font-size: 38px;
+    font-weight: 600;
+    color: #e0e0e0;
+    padding: 20px;
+}
+
+#terminalQuantityBox {
+    background-color: #2c2c2c; 
+    border-left: 1px solid #555555;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#terminalQuantityValue {
+    font-size: 52px;
+    font-weight: bold;
+    color: #3498db; 
+    text-align: center;
+}
+
+#terminalBottomPanel {
+    background-color: #3c3c3c;
+    border: 1px solid #555555;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+#terminalDescription {
+    font-size: 16px;
+    color: #bbbbbb;
+}
+
+#terminalCode {
+    font-size: 14px;
+    color: #888888;
+    font-style: italic;
+}
+
+/* Botões redondos de ação mantêm as cores de destaque */
+QPushButton#btnTerminalAdd, QPushButton#btnTerminalRemove {
+    font-size: 32px;
+    font-weight: bold;
+    min-width: 70px;
+    max-width: 70px;
+    min-height: 70px;
+    max-height: 70px;
+    border-radius: 35px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+QPushButton#btnTerminalAdd {
+    background-color: #0078d7;
+}
+QPushButton#btnTerminalAdd:hover {
+    background-color: #008cff;
+}
+
+QPushButton#btnTerminalRemove {
+    background-color: #6c757d;
+}
+QPushButton#btnTerminalRemove:hover {
+    background-color: #5a6268;
+}

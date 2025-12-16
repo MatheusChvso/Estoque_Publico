@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Distribuição / Build
+build/
+dist/
+*.spec
+*.exe
+
+# Logs e Banco de Dados Local
+*.log
+crash_log.txt
+backend/senha.txt
+
+# IDEs
+.vscode/
+.idea/
